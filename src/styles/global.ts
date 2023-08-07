@@ -21,6 +21,10 @@ export const GlobalStyle = createGlobalStyle`
     font: 400 1rem 'Roboto', sans-serif;
   }
 
+  button {
+    border: none;
+  }
+
   img {
     max-width: 100%;
   }

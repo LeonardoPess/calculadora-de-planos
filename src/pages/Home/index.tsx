@@ -1,93 +1,42 @@
-import { HomeContainer, ProductsContainer } from './styles'
-import bannerCoffe from '../../assets/banner-coffe.png'
-import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
-import { Product } from '../../components/Product'
+import { useForm } from 'react-hook-form'
+import { ChartBar } from 'phosphor-react'
+import { HomeContainer } from './styles'
 
 export function Home() {
+  const { register, handleSubmit } = useForm()
+
+  const date = new Date().toJSON().slice(0, 10)
+
   return (
     <>
       <HomeContainer>
+        <p>Complete as informações</p>
         <div>
-          <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-          <p>
-            Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
-            hora
-          </p>
-          <br />
-          <div className="benefits">
-            <span>
-              <div className="iconCircleBackground">
-                <ShoppingCart size={16} weight="fill" />
-              </div>
-              Compra simples e segura
-            </span>
-            <span>
-              <div className="iconCircleBackground">
-                <Package size={16} weight="fill" />
-              </div>
-              Embalagem mantém o café intacto
-            </span>
-            <span>
-              <div className="iconCircleBackground">
-                <Timer size={16} weight="fill" />
-              </div>
-              Entrega rápida e rastreada
-            </span>
-            <span>
-              <div className="iconCircleBackground">
-                <Coffee size={16} weight="fill" />
-              </div>
-              O café chega fresquinho até você
-            </span>
+          <div className="titleBox">
+            <ChartBar size={22} weight="bold" />
+            <div>
+              <h2>Consumo</h2>
+            </div>
+          </div>
+
+          <div className="inputWrapper">
+            <label htmlFor="">Início do Período:</label>
+            <input type="date" value={date} />
+          </div>
+          <div className="inputWrapper">
+            <label htmlFor="">Dia Atual:</label>
+            <input type="date" value={date} />
+          </div>
+          <div className="inputWrapper">
+            <label htmlFor="">Consumo (Período):</label>
+            <input type="number" />
+          </div>
+          <div className="inputWrapper">
+            <label htmlFor="">Desconto:</label>
+            <input type="number" />
           </div>
         </div>
-        <div className="bannerWrapper">
-          <img src={bannerCoffe} alt="Banner" />
-        </div>
       </HomeContainer>
-
-      <ProductsContainer>
-        <h2>Nossos cafés</h2>
-
-        <div>
-          <Product
-            coffeName="Expresso Tradicional"
-            description="O tradicional café feito com água quente e grãos moídos"
-            price={9.9}
-            tag="Tradicional"
-          />
-          <Product
-            coffeName="Expresso Tradicional"
-            description="O tradicional café feito com água quente e grãos moídos"
-            price={9.9}
-            tag="Tradicional"
-          />
-          <Product
-            coffeName="Expresso Tradicional"
-            description="O tradicional café feito com água quente e grãos moídos"
-            price={9.9}
-            tag="Tradicional"
-          />
-          <Product
-            coffeName="Expresso Tradicional"
-            description="O tradicional café feito com água quente e grãos moídos"
-            price={9.9}
-            tag="Tradicional"
-          />
-          <Product
-            coffeName="Expresso Tradicional"
-            description="O tradicional café feito com água quente e grãos moídos"
-            price={9.9}
-            tag="Tradicional"
-          />
-          <Product
-            coffeName="Expresso Tradicional"
-            description="O tradicional café feito com água quente e grãos moídos"
-            price={9.9}
-            tag="Tradicional"
-          />
-        </div>
-      </ProductsContainer>
     </>
   )
 }
