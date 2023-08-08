@@ -8,7 +8,6 @@ interface InformationsPlanProps {
   upgradeAt: number
   priceToUpgrade: number
   consumptionEstimate: number
-  isBestPlan?: boolean
   discount?: number
 }
 
@@ -20,9 +19,16 @@ export function InformationsPlan({
   upgradeAt,
   priceToUpgrade,
   consumptionEstimate,
-  isBestPlan = false,
   discount = 0,
 }: InformationsPlanProps) {
+  const isPlaysAvailableOver = consumptionEstimate > playsAvailable
+  const totalExtrasPlays = isPlaysAvailableOver
+    ? (consumptionEstimate - playsAvailable) * extraPlaysPrice
+    : 0
+
+  const priceTotalWithExtrasPlays =
+    ((price + totalExtrasPlays) * (100 - discount)) / 100
+
   function moneyFormatter(value: number) {
     return value.toLocaleString('pt-BR', {
       minimumFractionDigits: 2,
@@ -30,16 +36,9 @@ export function InformationsPlan({
     })
   }
 
-  const isPlaysAvailableOver = consumptionEstimate > playsAvailable
-  const totalExcedente = isPlaysAvailableOver
-    ? (consumptionEstimate - playsAvailable) * extraPlaysPrice
-    : 0
-
-  const priceTotalToPay = ((price + totalExcedente) * (100 - discount)) / 100
-
   return (
     <InformationsPlanContainer>
-      <h2 className={isBestPlan ? 'active' : ''}>{name}</h2>
+      <h2>{name}</h2>
       <span>
         Plays: <strong>{playsAvailable.toLocaleString('pt-BR')}</strong>
       </span>
@@ -53,12 +52,12 @@ export function InformationsPlan({
         Upgrade em: <strong>{upgradeAt.toLocaleString('pt-BR')}</strong>
       </span>
       <span>
-        Total Excedente: <strong>R${moneyFormatter(totalExcedente)}</strong>
+        Total Excedente: <strong>R${moneyFormatter(totalExtrasPlays)}</strong>
       </span>
       <span>
         Valor próx plano: <strong>R${moneyFormatter(priceToUpgrade)}</strong>
       </span>
-      <strong>Total: R${moneyFormatter(priceTotalToPay)}</strong>
+      <strong>Total: R${moneyFormatter(priceTotalWithExtrasPlays)}</strong>
     </InformationsPlanContainer>
   )
 }

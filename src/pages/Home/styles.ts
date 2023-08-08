@@ -55,5 +55,6 @@ export const FormContainer = styled.form`
 
   input:disabled {
     color: ${({ theme }) => theme['purple-900']};
+    font: ${({ theme }) => theme['title-xs']};
   }
 `

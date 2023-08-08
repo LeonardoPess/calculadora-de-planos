@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ChartBar } from 'phosphor-react'
 import { HomeContainer, FormContainer } from './styles'
@@ -70,7 +70,18 @@ const plans = [
   },
 ]
 
+interface Plan {
+  id: number
+  name: string
+  playsAvailable: number
+  price: number
+  extraPlaysPrice: number
+  upgradeAt: number
+  priceToUpgrade: number
+}
+
 export function Home() {
+  const [plansList, setPlansList] = useState<Plan[]>([])
   const [cycleStatedAt, setCycleStatedAt] = useState(
     new Date().toJSON().slice(0, 10),
   )
@@ -79,6 +90,10 @@ export function Home() {
   )
   const [consumption, setConsumption] = useState(0)
   const [discount, setDiscount] = useState(0)
+
+  useEffect(() => {
+    setPlansList(plans)
+  }, [])
 
   const timeDiff =
     new Date(currentDate).getTime() - new Date(cycleStatedAt).getTime()
@@ -142,7 +157,7 @@ export function Home() {
       </FormContainer>
 
       <div>
-        {plans.map(
+        {plansList.map(
           ({
             id,
             name,
