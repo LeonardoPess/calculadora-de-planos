@@ -1,6 +1,10 @@
-import { styled } from 'styled-components'
+import { css, styled } from 'styled-components'
 
-export const InformationsPlanContainer = styled.div`
+interface InformationsPlanContainerProps {
+  border?: boolean
+}
+
+export const InformationsPlanContainer = styled.div<InformationsPlanContainerProps>`
   min-width: 255px;
   margin-top: 1rem;
   display: flex;
@@ -10,6 +14,11 @@ export const InformationsPlanContainer = styled.div`
   padding: 2rem;
 
   border-radius: 6px 44px;
+  ${(props) =>
+    props.border &&
+    css`
+      border: 2px solid ${({ theme }) => theme['purple-500']};
+    `}
 
   background-color: ${({ theme }) => theme['brown-50']};
 
