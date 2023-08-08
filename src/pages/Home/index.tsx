@@ -123,7 +123,7 @@ export function Home() {
           />
         </div>
         <div className="inputWrapper">
-          <label htmlFor="">Desconto:</label>
+          <label htmlFor="">Desconto(%):</label>
           <input
             type="number"
             value={discount}
@@ -162,6 +162,7 @@ export function Home() {
               upgradeAt={upgradeAt}
               priceToUpgrade={priceToUpgrade}
               consumptionEstimate={consumptionEstimate}
+              discount={discount}
             />
           ),
         )}

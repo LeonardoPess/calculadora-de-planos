@@ -7,8 +7,9 @@ interface InformationsPlanProps {
   extraPlaysPrice: number
   upgradeAt: number
   priceToUpgrade: number
-  isBestPlan?: boolean
   consumptionEstimate: number
+  isBestPlan?: boolean
+  discount?: number
 }
 
 export function InformationsPlan({
@@ -18,8 +19,9 @@ export function InformationsPlan({
   extraPlaysPrice,
   upgradeAt,
   priceToUpgrade,
-  isBestPlan = false,
   consumptionEstimate,
+  isBestPlan = false,
+  discount = 0,
 }: InformationsPlanProps) {
   function moneyFormatter(value: number) {
     return value.toLocaleString('pt-BR', {
@@ -33,7 +35,7 @@ export function InformationsPlan({
     ? (consumptionEstimate - playsAvailable) * extraPlaysPrice
     : 0
 
-  const priceTotalToPay = price + totalExcedente
+  const priceTotalToPay = ((price + totalExcedente) * (100 - discount)) / 100
 
   return (
     <InformationsPlanContainer>
