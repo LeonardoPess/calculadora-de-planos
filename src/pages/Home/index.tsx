@@ -74,16 +74,15 @@ export function Home() {
   const [cycleStatedAt, setCycleStatedAt] = useState(
     new Date().toJSON().slice(0, 10),
   )
-
   const [currentDate, setCurrentDate] = useState(
     new Date().toJSON().slice(0, 10),
   )
-
   const [consumption, setConsumption] = useState(0)
   const [discount, setDiscount] = useState(0)
 
-  const diffInMs = new Date(currentDate) - new Date(cycleStatedAt)
-  const diffInDays = diffInMs / (1000 * 60 * 60 * 24)
+  const timeDiff =
+    new Date(currentDate).getTime() - new Date(cycleStatedAt).getTime()
+  const diffInDays = timeDiff / (1000 * 3600 * 24)
   const consumptionEstimate = (consumption / diffInDays) * 30
 
   return (
