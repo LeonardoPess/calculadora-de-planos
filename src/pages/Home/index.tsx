@@ -82,9 +82,7 @@ interface Plan {
 
 export function Home() {
   const [plansList, setPlansList] = useState<Plan[]>([])
-  const [cycleStatedAt, setCycleStatedAt] = useState(
-    new Date().toJSON().slice(0, 10),
-  )
+  const [cycleStatedAt, setCycleStatedAt] = useState('')
   const [currentDate, setCurrentDate] = useState(
     new Date().toJSON().slice(0, 10),
   )
@@ -93,6 +91,10 @@ export function Home() {
 
   useEffect(() => {
     setPlansList(plans)
+
+    const date = new Date()
+    const firstMonthDayDate = new Date(date.getFullYear(), date.getMonth(), 1)
+    setCycleStatedAt(firstMonthDayDate.toJSON().slice(0, 10))
   }, [])
 
   const timeDiff =
@@ -166,19 +168,61 @@ export function Home() {
             extraPlaysPrice,
             upgradeAt,
             priceToUpgrade,
-          }) => (
-            <InformationsPlan
-              key={id}
-              name={name}
-              playsAvailable={playsAvailable}
-              price={price}
-              extraPlaysPrice={extraPlaysPrice}
-              upgradeAt={upgradeAt}
-              priceToUpgrade={priceToUpgrade}
-              consumptionEstimate={consumptionEstimate}
-              discount={discount}
-            />
-          ),
+          }) => {
+            let isCheapestPlan = false
+            if (name === 'Basic' && consumptionEstimate < 17500)
+              isCheapestPlan = true
+            if (
+              name === 'Pro' &&
+              consumptionEstimate > 17500 &&
+              consumptionEstimate < 45000
+            )
+              isCheapestPlan = true
+            if (
+              name === 'Scale' &&
+              consumptionEstimate > 45000 &&
+              consumptionEstimate < 97500
+            )
+              isCheapestPlan = true
+            if (
+              name === 'Enterprise 100k' &&
+              consumptionEstimate > 97500 &&
+              consumptionEstimate < 240000
+            )
+              isCheapestPlan = true
+            if (
+              name === 'Enterprise 250k' &&
+              consumptionEstimate > 240000 &&
+              consumptionEstimate < 460000
+            )
+              isCheapestPlan = true
+            if (
+              name === 'Enterprise 500k' &&
+              consumptionEstimate > 460000 &&
+              consumptionEstimate < 1050000
+            )
+              isCheapestPlan = true
+            if (
+              name === 'Enterprise Unlimited' &&
+              consumptionEstimate > 1050000
+            )
+              isCheapestPlan = true
+
+            return (
+              <InformationsPlan
+                key={id}
+                name={name}
+                playsAvailable={playsAvailable}
+                price={price}
+                extraPlaysPrice={extraPlaysPrice}
+                upgradeAt={upgradeAt}
+                priceToUpgrade={priceToUpgrade}
+                consumptionEstimate={consumptionEstimate}
+                discount={discount}
+                hasBorder={isCheapestPlan}
+              />
+            )
+          },
         )}
       </div>
     </HomeContainer>

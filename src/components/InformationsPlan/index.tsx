@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-
 import { InformationsPlanContainer } from './styles'
 
 interface InformationsPlanProps {
@@ -11,6 +9,7 @@ interface InformationsPlanProps {
   priceToUpgrade: number
   consumptionEstimate: number
   discount?: number
+  hasBorder?: boolean
 }
 
 export function InformationsPlan({
@@ -22,9 +21,8 @@ export function InformationsPlan({
   priceToUpgrade,
   consumptionEstimate,
   discount = 0,
+  hasBorder,
 }: InformationsPlanProps) {
-  const [isCheapestPlan, setIsCheapestPlan] = useState(false)
-
   const isPlaysAvailableOver = consumptionEstimate > playsAvailable
   const totalExtrasPlays = isPlaysAvailableOver
     ? (consumptionEstimate - playsAvailable) * extraPlaysPrice
@@ -40,51 +38,9 @@ export function InformationsPlan({
     })
   }
 
-  useEffect(() => {
-    setIsCheapestPlan(false)
-    if (name === 'Basic' && consumptionEstimate < 17500) {
-      setIsCheapestPlan(true)
-    } else if (
-      name === 'Pro' &&
-      consumptionEstimate > 17500 &&
-      consumptionEstimate < 45000
-    ) {
-      setIsCheapestPlan(true)
-    } else if (
-      name === 'Scale' &&
-      consumptionEstimate > 45000 &&
-      consumptionEstimate < 97500
-    ) {
-      setIsCheapestPlan(true)
-    } else if (
-      name === 'Enterprise 100k' &&
-      consumptionEstimate > 97500 &&
-      consumptionEstimate < 240000
-    ) {
-      setIsCheapestPlan(true)
-    } else if (
-      name === 'Enterprise 250k' &&
-      consumptionEstimate > 240000 &&
-      consumptionEstimate < 460000
-    ) {
-      setIsCheapestPlan(true)
-    } else if (
-      name === 'Enterprise 500k' &&
-      consumptionEstimate > 460000 &&
-      consumptionEstimate < 1050000
-    ) {
-      setIsCheapestPlan(true)
-    } else if (
-      name === 'Enterprise Unlimited' &&
-      consumptionEstimate > 1050000
-    ) {
-      setIsCheapestPlan(true)
-    }
-  }, [name, consumptionEstimate])
-
   return (
-    <InformationsPlanContainer border={isCheapestPlan}>
-      <h2 className={isCheapestPlan ? 'active' : ''}>{name}</h2>
+    <InformationsPlanContainer border={hasBorder}>
+      <h2 className={hasBorder ? 'active' : ''}>{name}</h2>
       <span>
         Plays: <strong>{playsAvailable.toLocaleString('pt-BR')}</strong>
       </span>
