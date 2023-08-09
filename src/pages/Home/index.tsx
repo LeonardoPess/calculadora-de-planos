@@ -135,7 +135,9 @@ export function Home() {
           <input
             type="number"
             value={consumption}
-            onChange={(e) => setConsumption(Number(e.target.value))}
+            onChange={(e) =>
+              setConsumption(Number(e.target.value.replace('.', '')))
+            }
           />
         </div>
         <div className="inputWrapper">

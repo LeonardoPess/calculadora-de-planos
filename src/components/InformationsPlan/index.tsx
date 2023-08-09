@@ -9,7 +9,7 @@ interface InformationsPlanProps {
   priceToUpgrade: number
   consumptionEstimate: number
   discount?: number
-  hasBorder?: boolean
+  hasBorder: boolean
 }
 
 export function InformationsPlan({
