@@ -9,6 +9,7 @@ const plans = [
     id: 1,
     name: 'Basic',
     playsAvailable: 10000,
+    playsToStart: 0,
     price: 97,
     extraPlaysPrice: 0.02,
     upgradeAt: 17500,
@@ -18,6 +19,7 @@ const plans = [
     id: 2,
     name: 'Pro',
     playsAvailable: 35000,
+    playsToStart: 17500,
     price: 247,
     extraPlaysPrice: 0.02,
     upgradeAt: 45000,
@@ -27,6 +29,7 @@ const plans = [
     id: 3,
     name: 'Scale',
     playsAvailable: 70000,
+    playsToStart: 45000,
     price: 447,
     extraPlaysPrice: 0.02,
     upgradeAt: 97500,
@@ -36,6 +39,7 @@ const plans = [
     id: 4,
     name: 'Enterprise 100k',
     playsAvailable: 100000,
+    playsToStart: 97500,
     price: 997,
     extraPlaysPrice: 0.01,
     upgradeAt: 240000,
@@ -45,6 +49,7 @@ const plans = [
     id: 5,
     name: 'Enterprise 250k',
     playsAvailable: 250000,
+    playsToStart: 240000,
     price: 2397,
     extraPlaysPrice: 0.01,
     upgradeAt: 460000,
@@ -54,6 +59,7 @@ const plans = [
     id: 6,
     name: 'Enterprise 500k',
     playsAvailable: 500000,
+    playsToStart: 460000,
     price: 4497,
     extraPlaysPrice: 0.01,
     upgradeAt: 1050000,
@@ -62,10 +68,11 @@ const plans = [
   {
     id: 7,
     name: 'Enterprise Unlimited',
-    playsAvailable: 0,
+    playsAvailable: Infinity,
+    playsToStart: 1050000,
     price: 9997,
     extraPlaysPrice: 0,
-    upgradeAt: 0,
+    upgradeAt: Infinity,
     priceToUpgrade: 0,
   },
 ]
@@ -74,6 +81,7 @@ interface Plan {
   id: number
   name: string
   playsAvailable: number
+  playsToStart: number
   price: number
   extraPlaysPrice: number
   upgradeAt: number
@@ -166,49 +174,15 @@ export function Home() {
             id,
             name,
             playsAvailable,
+            playsToStart,
             price,
             extraPlaysPrice,
             upgradeAt,
             priceToUpgrade,
           }) => {
-            let isCheapestPlan = false
-            if (name === 'Basic' && consumptionEstimate < 17500)
-              isCheapestPlan = true
-            if (
-              name === 'Pro' &&
-              consumptionEstimate > 17500 &&
-              consumptionEstimate < 45000
-            )
-              isCheapestPlan = true
-            if (
-              name === 'Scale' &&
-              consumptionEstimate > 45000 &&
-              consumptionEstimate < 97500
-            )
-              isCheapestPlan = true
-            if (
-              name === 'Enterprise 100k' &&
-              consumptionEstimate > 97500 &&
-              consumptionEstimate < 240000
-            )
-              isCheapestPlan = true
-            if (
-              name === 'Enterprise 250k' &&
-              consumptionEstimate > 240000 &&
-              consumptionEstimate < 460000
-            )
-              isCheapestPlan = true
-            if (
-              name === 'Enterprise 500k' &&
-              consumptionEstimate > 460000 &&
-              consumptionEstimate < 1050000
-            )
-              isCheapestPlan = true
-            if (
-              name === 'Enterprise Unlimited' &&
-              consumptionEstimate > 1050000
-            )
-              isCheapestPlan = true
+            const isCheapestPlan =
+              playsToStart <= consumptionEstimate &&
+              upgradeAt > consumptionEstimate
 
             return (
               <InformationsPlan
