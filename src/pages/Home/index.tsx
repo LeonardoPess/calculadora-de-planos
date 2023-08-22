@@ -33,7 +33,7 @@ const plans = [
     price: 447,
     extraPlaysPrice: 0.02,
     upgradeAt: 97500,
-    priceToUpgrade: 450,
+    priceToUpgrade: 550,
   },
   {
     id: 4,
