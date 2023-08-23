@@ -9,7 +9,9 @@ interface InformationsPlanProps {
   priceToUpgrade: number
   consumptionEstimate: number
   discount?: number
-  hasBorder: boolean
+  isCheapestPlan: boolean
+  setCheapestPlanPriceTotal: (priceTotalWithExtrasPlays: number) => void
+  cheapestPlanPriceTotal: number
 }
 
 export function InformationsPlan({
@@ -21,7 +23,9 @@ export function InformationsPlan({
   priceToUpgrade,
   consumptionEstimate,
   discount = 0,
-  hasBorder,
+  isCheapestPlan,
+  setCheapestPlanPriceTotal,
+  cheapestPlanPriceTotal,
 }: InformationsPlanProps) {
   const isPlaysAvailableOver = consumptionEstimate > playsAvailable
   const totalExtrasPlays = isPlaysAvailableOver
@@ -31,6 +35,8 @@ export function InformationsPlan({
   const priceTotalWithExtrasPlays =
     ((price + totalExtrasPlays) * (100 - discount)) / 100
 
+  isCheapestPlan && setCheapestPlanPriceTotal(priceTotalWithExtrasPlays)
+
   function moneyFormatter(value: number) {
     return value.toLocaleString('pt-BR', {
       minimumFractionDigits: 2,
@@ -38,9 +44,14 @@ export function InformationsPlan({
     })
   }
 
+  const wastedValue =
+    priceTotalWithExtrasPlays > cheapestPlanPriceTotal
+      ? priceTotalWithExtrasPlays - cheapestPlanPriceTotal
+      : priceTotalWithExtrasPlays - cheapestPlanPriceTotal
+
   return (
-    <InformationsPlanContainer border={hasBorder}>
-      <h2 className={hasBorder ? 'active' : ''}>{name}</h2>
+    <InformationsPlanContainer border={isCheapestPlan}>
+      <h2 className={isCheapestPlan ? 'active' : ''}>{name}</h2>
       <span>
         Plays: <strong>{playsAvailable.toLocaleString('pt-BR')}</strong>
       </span>
@@ -58,6 +69,9 @@ export function InformationsPlan({
       </span>
       <span>
         Valor próx plano: <strong>R${moneyFormatter(priceToUpgrade)}</strong>
+      </span>
+      <span>
+        Valor dispediçado: <strong>R${moneyFormatter(wastedValue)}</strong>
       </span>
       <strong>Total: R${moneyFormatter(priceTotalWithExtrasPlays)}</strong>
     </InformationsPlanContainer>

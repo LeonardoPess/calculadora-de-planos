@@ -90,6 +90,7 @@ interface Plan {
 
 export function Home() {
   const [plansList, setPlansList] = useState<Plan[]>([])
+  const [cheapestPlanPriceTotal, setCheapestPlanPriceTotal] = useState(0)
   const [cycleStatedAt, setCycleStatedAt] = useState('')
   const [currentDate, setCurrentDate] = useState(
     new Date().toJSON().slice(0, 10),
@@ -195,7 +196,9 @@ export function Home() {
                 priceToUpgrade={priceToUpgrade}
                 consumptionEstimate={consumptionEstimate}
                 discount={discount}
-                hasBorder={isCheapestPlan}
+                isCheapestPlan={isCheapestPlan}
+                setCheapestPlanPriceTotal={setCheapestPlanPriceTotal}
+                cheapestPlanPriceTotal={cheapestPlanPriceTotal}
               />
             )
           },
