@@ -71,7 +71,7 @@ export function InformationsPlan({
         Valor próx plano: <strong>R${moneyFormatter(priceToUpgrade)}</strong>
       </span>
       <span>
-        Valor dispediçado: <strong>R${moneyFormatter(wastedValue)}</strong>
+        Valor desperdiçado: <strong>R${moneyFormatter(wastedValue)}</strong>
       </span>
       <strong>Total: R${moneyFormatter(priceTotalWithExtrasPlays)}</strong>
     </InformationsPlanContainer>
