@@ -12,6 +12,7 @@ interface InformationsPlanProps {
   isCheapestPlan: boolean
   setCheapestPlanPriceTotal: (priceTotalWithExtrasPlays: number) => void
   cheapestPlanPriceTotal: number
+  isBr: boolean
 }
 
 export function InformationsPlan({
@@ -26,6 +27,7 @@ export function InformationsPlan({
   isCheapestPlan,
   setCheapestPlanPriceTotal,
   cheapestPlanPriceTotal,
+  isBr,
 }: InformationsPlanProps) {
   const isPlaysAvailableOver = consumptionEstimate > playsAvailable
   const totalExtrasPlays = isPlaysAvailableOver
@@ -49,6 +51,7 @@ export function InformationsPlan({
       ? priceTotalWithExtrasPlays - cheapestPlanPriceTotal
       : priceTotalWithExtrasPlays - cheapestPlanPriceTotal
 
+  const currencySymbol = isBr ? 'R$' : '$'
   return (
     <InformationsPlanContainer border={isCheapestPlan}>
       <h2 className={isCheapestPlan ? 'active' : ''}>{name}</h2>
@@ -56,24 +59,30 @@ export function InformationsPlan({
         Plays: <strong>{playsAvailable.toLocaleString('pt-BR')}</strong>
       </span>
       <span>
-        Valor: <strong>R${moneyFormatter(price)}</strong>
+        Valor: <strong>{currencySymbol + moneyFormatter(price)}</strong>
       </span>
       <span>
-        Play Extra: <strong>R${moneyFormatter(extraPlaysPrice)}</strong>
+        Play Extra:{' '}
+        <strong>{currencySymbol + moneyFormatter(extraPlaysPrice)}</strong>
       </span>
       <span>
         Upgrade em: <strong>{upgradeAt.toLocaleString('pt-BR')}</strong>
       </span>
       <span>
-        Total Excedente: <strong>R${moneyFormatter(totalExtrasPlays)}</strong>
+        Total Excedente:{' '}
+        <strong>{currencySymbol + moneyFormatter(totalExtrasPlays)}</strong>
       </span>
       <span>
-        Valor próx plano: <strong>R${moneyFormatter(priceToUpgrade)}</strong>
+        Valor próx plano:{' '}
+        <strong>{currencySymbol + moneyFormatter(priceToUpgrade)}</strong>
       </span>
       <span>
-        Valor desperdiçado: <strong>R${moneyFormatter(wastedValue)}</strong>
+        Valor desperdiçado:{' '}
+        <strong>{currencySymbol + moneyFormatter(wastedValue)}</strong>
       </span>
-      <strong>Total: R${moneyFormatter(priceTotalWithExtrasPlays)}</strong>
+      <strong>
+        Total: {currencySymbol + moneyFormatter(priceTotalWithExtrasPlays)}
+      </strong>
     </InformationsPlanContainer>
   )
 }

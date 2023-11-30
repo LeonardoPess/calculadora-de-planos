@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 export const HomeContainer = styled.div`
+  padding-bottom: 2rem;
   display: flex;
   align-items: flex-start;
   gap: 2rem;
@@ -56,5 +57,29 @@ export const FormContainer = styled.form`
   input:disabled {
     color: ${({ theme }) => theme['purple-900']};
     font: ${({ theme }) => theme['title-xs']};
+  }
+
+  .tiersWrapper {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > button {
+      padding: 0.5rem;
+
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 6px;
+
+      &:hover {
+        border: 1px solid ${({ theme }) => theme['purple-900']};
+      }
+
+      &.active {
+        border: 1px solid ${({ theme }) => theme['purple-900']};
+      }
+    }
   }
 `

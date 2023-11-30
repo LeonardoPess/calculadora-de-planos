@@ -4,7 +4,7 @@ import { ChartBar } from 'phosphor-react'
 import { HomeContainer, FormContainer } from './styles'
 import { InformationsPlan } from '../../components/InformationsPlan'
 
-const plans = [
+const plansBrasil = [
   {
     id: 1,
     name: 'Basic',
@@ -77,6 +77,132 @@ const plans = [
   },
 ]
 
+const plansTier1 = [
+  {
+    id: 1,
+    name: 'Basic',
+    playsAvailable: 5000,
+    playsToStart: 0,
+    price: 29,
+    extraPlaysPrice: 0.02,
+    upgradeAt: 7500,
+    priceToUpgrade: 50,
+  },
+  {
+    id: 2,
+    name: 'Pro',
+    playsAvailable: 15000,
+    playsToStart: 7500,
+    price: 79,
+    extraPlaysPrice: 0.01,
+    upgradeAt: 27000,
+    priceToUpgrade: 120,
+  },
+  {
+    id: 3,
+    name: 'Scale',
+    playsAvailable: 50000,
+    playsToStart: 27000,
+    price: 199,
+    extraPlaysPrice: 0.01,
+    upgradeAt: 69000,
+    priceToUpgrade: 190,
+  },
+  {
+    id: 4,
+    name: 'Enterprise 100k',
+    playsAvailable: 100000,
+    playsToStart: 69000,
+    price: 389,
+    extraPlaysPrice: 0.005,
+    upgradeAt: 212000,
+    priceToUpgrade: 560,
+  },
+  {
+    id: 5,
+    name: 'Enterprise 250k',
+    playsAvailable: 250000,
+    playsToStart: 212000,
+    price: 949,
+    extraPlaysPrice: 0.005,
+    upgradeAt: 420000,
+    priceToUpgrade: 949,
+  },
+  {
+    id: 6,
+    name: 'Enterprise 500k',
+    playsAvailable: 500000,
+    playsToStart: 420000,
+    price: 1799,
+    extraPlaysPrice: 0.005,
+    upgradeAt: Infinity,
+    priceToUpgrade: 0,
+  },
+]
+
+const plansTier2 = [
+  {
+    id: 1,
+    name: 'Basic',
+    playsAvailable: 8000,
+    playsToStart: 0,
+    price: 19,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 13000,
+    priceToUpgrade: 20,
+  },
+  {
+    id: 2,
+    name: 'Pro',
+    playsAvailable: 20000,
+    playsToStart: 13000,
+    price: 39,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 30000,
+    priceToUpgrade: 40,
+  },
+  {
+    id: 3,
+    name: 'Scale',
+    playsAvailable: 40000,
+    playsToStart: 30000,
+    price: 79,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 69500,
+    priceToUpgrade: 118,
+  },
+  {
+    id: 4,
+    name: 'Enterprise 100k',
+    playsAvailable: 100000,
+    playsToStart: 69500,
+    price: 197,
+    extraPlaysPrice: 0.002,
+    upgradeAt: 200000,
+    priceToUpgrade: 200,
+  },
+  {
+    id: 5,
+    name: 'Enterprise 250k',
+    playsAvailable: 250000,
+    playsToStart: 200000,
+    price: 397,
+    extraPlaysPrice: 0.002,
+    upgradeAt: 446000,
+    priceToUpgrade: 392,
+  },
+  {
+    id: 6,
+    name: 'Enterprise 500k',
+    playsAvailable: 500000,
+    playsToStart: 446000,
+    price: 789,
+    extraPlaysPrice: 0.002,
+    upgradeAt: Infinity,
+    priceToUpgrade: 0,
+  },
+]
+
 interface Plan {
   id: number
   name: string
@@ -90,6 +216,7 @@ interface Plan {
 
 export function Home() {
   const [plansList, setPlansList] = useState<Plan[]>([])
+  const [currentPlansActive, setCurrentPlansActive] = useState('plansBrasil')
   const [cheapestPlanPriceTotal, setCheapestPlanPriceTotal] = useState(0)
   const [cycleStatedAt, setCycleStatedAt] = useState('')
   const [currentDate, setCurrentDate] = useState(
@@ -99,7 +226,7 @@ export function Home() {
   const [discount, setDiscount] = useState(0)
 
   useEffect(() => {
-    setPlansList(plans)
+    setPlansList(plansBrasil)
 
     const date = new Date()
     const firstMonthDayDate = new Date(date.getFullYear(), date.getMonth(), 1)
@@ -167,6 +294,41 @@ export function Home() {
             }
           />
         </div>
+        <div className="inputWrapper">
+          <label htmlFor="pet-select">Tipos de planos:</label>
+          <div className="tiersWrapper">
+            <button
+              className={currentPlansActive === 'plansBrasil' ? 'active' : ''}
+              onClick={(e) => {
+                e.preventDefault()
+                setPlansList(plansBrasil)
+                setCurrentPlansActive('plansBrasil')
+              }}
+            >
+              Brasil
+            </button>
+            <button
+              className={currentPlansActive === 'plansTier1' ? 'active' : ''}
+              onClick={(e) => {
+                e.preventDefault()
+                setPlansList(plansTier1)
+                setCurrentPlansActive('plansTier1')
+              }}
+            >
+              Tier 1
+            </button>
+            <button
+              className={currentPlansActive === 'plansTier2' ? 'active' : ''}
+              onClick={(e) => {
+                e.preventDefault()
+                setPlansList(plansTier2)
+                setCurrentPlansActive('plansTier2')
+              }}
+            >
+              Tier 2 (Latam)
+            </button>
+          </div>
+        </div>
       </FormContainer>
 
       <div>
@@ -199,6 +361,7 @@ export function Home() {
                 isCheapestPlan={isCheapestPlan}
                 setCheapestPlanPriceTotal={setCheapestPlanPriceTotal}
                 cheapestPlanPriceTotal={cheapestPlanPriceTotal}
+                isBr={currentPlansActive === 'plansBrasil'}
               />
             )
           },
