@@ -72,7 +72,7 @@ const plansBrasil = [
     playsToStart: 950000,
     price: 8997,
     extraPlaysPrice: 0.01,
-    upgradeAt: 1050000,
+    upgradeAt: 1700000,
     priceToUpgrade: 7000,
   },
   {
