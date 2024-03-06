@@ -63,8 +63,9 @@ export const FormContainer = styled.form`
     padding: 0.5rem;
     margin-top: 1rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
 
     & > button {
       padding: 0.5rem;

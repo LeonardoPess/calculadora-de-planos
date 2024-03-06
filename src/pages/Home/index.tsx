@@ -8,6 +8,99 @@ const plansBrasil = [
   {
     id: 1,
     name: 'Basic',
+    playsAvailable: 6000,
+    playsToStart: 0,
+    price: 97,
+    extraPlaysPrice: 0.02,
+    upgradeAt: 16000,
+    priceToUpgrade: 200,
+  },
+  {
+    id: 2,
+    name: 'Pro',
+    playsAvailable: 25000,
+    playsToStart: 16000,
+    price: 297,
+    extraPlaysPrice: 0.02,
+    upgradeAt: 40000,
+    priceToUpgrade: 300,
+  },
+  {
+    id: 3,
+    name: 'Scale',
+    playsAvailable: 50000,
+    playsToStart: 40000,
+    price: 597,
+    extraPlaysPrice: 0.02,
+    upgradeAt: 85000,
+    priceToUpgrade: 700,
+  },
+  {
+    id: 4,
+    name: 'Enterprise 100k',
+    playsAvailable: 100000,
+    playsToStart: 85000,
+    price: 1297,
+    extraPlaysPrice: 0.014,
+    upgradeAt: 221429,
+    priceToUpgrade: 1700,
+  },
+  {
+    id: 5,
+    name: 'Enterprise 250k',
+    playsAvailable: 250000,
+    playsToStart: 221429,
+    price: 2997,
+    extraPlaysPrice: 0.014,
+    upgradeAt: 464286,
+    priceToUpgrade: 3000,
+  },
+  {
+    id: 6,
+    name: 'Enterprise 500k',
+    playsAvailable: 500000,
+    playsToStart: 464286,
+    price: 5997,
+    extraPlaysPrice: 0.014,
+    upgradeAt: 857143,
+    priceToUpgrade: 5000,
+  },
+  {
+    id: 7,
+    name: 'Enterprise 1m',
+    playsAvailable: 1000000,
+    playsToStart: 857143,
+    price: 10997,
+    extraPlaysPrice: 0.01,
+    upgradeAt: 2000000,
+    priceToUpgrade: 10000,
+  },
+  {
+    id: 8,
+    name: 'Enterprise 2m',
+    playsAvailable: 2000000,
+    playsToStart: 2000000,
+    price: 20997,
+    extraPlaysPrice: 0.01,
+    upgradeAt: 2900000,
+    priceToUpgrade: 9000,
+  },
+  {
+    id: 9,
+    name: 'Enterprise 3m',
+    playsAvailable: 3000000,
+    playsToStart: 2900000,
+    price: 29997,
+    extraPlaysPrice: 0.01,
+    upgradeAt: Infinity,
+    priceToUpgrade: 0,
+  },
+]
+
+const plansBrasilLegacy = [
+  {
+    id: 1,
+    name: 'Basic',
     playsAvailable: 10000,
     playsToStart: 0,
     price: 97,
@@ -348,6 +441,16 @@ export function Home() {
               Brasil
             </button>
             <button
+              className={currentPlansActive === 'plansBrasilLegacy' ? 'active' : ''}
+              onClick={(e) => {
+                e.preventDefault()
+                setPlansList(plansBrasilLegacy)
+                setCurrentPlansActive('plansBrasilLegacy')
+              }}
+            >
+              Brasil Legacy
+            </button>
+            <button
               className={currentPlansActive === 'plansTier1' ? 'active' : ''}
               onClick={(e) => {
                 e.preventDefault()
@@ -401,7 +504,7 @@ export function Home() {
                 isCheapestPlan={isCheapestPlan}
                 setCheapestPlanPriceTotal={setCheapestPlanPriceTotal}
                 cheapestPlanPriceTotal={cheapestPlanPriceTotal}
-                isBr={currentPlansActive === 'plansBrasil'}
+                isBr={currentPlansActive === 'plansBrasil' || currentPlansActive === 'plansBrasilLegacy'}
               />
             )
           },
