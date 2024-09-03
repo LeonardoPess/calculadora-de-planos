@@ -236,10 +236,10 @@ const plansTier1 = [
     name: 'Enterprise 250k',
     playsAvailable: 250000,
     playsToStart: 245000,
-    price: 997,
+    price: 977,
     extraPlaysPrice: 0.004,
     upgradeAt: 480000,
-    priceToUpgrade: 949,
+    priceToUpgrade: 920,
   },
   {
     id: 6,
