@@ -452,144 +452,150 @@ export function Home() {
   const consumptionEstimate = (consumption / diffInDays) * 30
 
   return (
-    <HomeContainer>
-      <FormContainer>
-        <div className="titleBox">
-          <ChartBar size={22} weight="bold" />
-          <div>
-            <h2>Consumo</h2>
+    <div>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansBrasil' && 'planos brasileiros a partir do final de 03/2024'}</strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansBrasilLegacy' && 'planos brasileiros antigos, até 03/2024'}</strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansTier1' && 'EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul'}</strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansTier2' && 'América Latina, África, Países asiáticos não-ricos.'}</strong>
+      <HomeContainer>
+        <FormContainer>
+          <div className="titleBox">
+            <ChartBar size={22} weight="bold" />
+            <div>
+              <h2>Consumo</h2>
+            </div>
           </div>
-        </div>
 
-        <div className="inputWrapper">
-          <label htmlFor="startedAt">Início do Período:</label>
-          <input
-            type="date"
-            value={cycleStatedAt}
-            onChange={(e) => setCycleStatedAt(e.target.value)}
-            name="startedAt"
-          />
-        </div>
-        <div className="inputWrapper">
-          <label htmlFor="currentDate">Dia Atual:</label>
-          <input
-            type="date"
-            value={currentDate}
-            onChange={(e) => setCurrentDate(e.target.value)}
-            name="currentDate"
-          />
-        </div>
-        <div className="inputWrapper">
-          <label htmlFor="">Consumo (Período):</label>
-          <input
-            type="number"
-            value={consumption}
-            onChange={(e) =>
-              setConsumption(Number(e.target.value.replace('.', '')))
-            }
-          />
-        </div>
-        <div className="inputWrapper">
-          <label htmlFor="">Desconto(%):</label>
-          <input
-            type="number"
-            value={discount}
-            onChange={(e) => setDiscount(Number(e.target.value))}
-          />
-        </div>
-        <div className="inputWrapper">
-          <label htmlFor="">Estimativa:</label>
-          <input
-            disabled
-            type="texte"
-            value={
-              Math.trunc(consumptionEstimate).toLocaleString('pt-BR') + ' Plays'
-            }
-          />
-        </div>
-        <div className="inputWrapper">
-          <label htmlFor="pet-select">Tipos de planos:</label>
-          <div className="tiersWrapper">
-            <button
-              className={currentPlansActive === 'plansBrasil' ? 'active' : ''}
-              onClick={(e) => {
-                e.preventDefault()
-                setPlansList(plansBrasil)
-                setCurrentPlansActive('plansBrasil')
-              }}
-            >
-              Brasil
-            </button>
-            <button
-              className={currentPlansActive === 'plansBrasilLegacy' ? 'active' : ''}
-              onClick={(e) => {
-                e.preventDefault()
-                setPlansList(plansBrasilLegacy)
-                setCurrentPlansActive('plansBrasilLegacy')
-              }}
-            >
-              Brasil Legacy
-            </button>
-            <button
-              className={currentPlansActive === 'plansTier1' ? 'active' : ''}
-              onClick={(e) => {
-                e.preventDefault()
-                setPlansList(plansTier1)
-                setCurrentPlansActive('plansTier1')
-              }}
-            >
-              Tier 1
-            </button>
-            <button
-              className={currentPlansActive === 'plansTier2' ? 'active' : ''}
-              onClick={(e) => {
-                e.preventDefault()
-                setPlansList(plansTier2)
-                setCurrentPlansActive('plansTier2')
-              }}
-            >
-              Tier 2 (Latam)
-            </button>
+          <div className="inputWrapper">
+            <label htmlFor="startedAt">Início do Período:</label>
+            <input
+              type="date"
+              value={cycleStatedAt}
+              onChange={(e) => setCycleStatedAt(e.target.value)}
+              name="startedAt"
+            />
           </div>
+          <div className="inputWrapper">
+            <label htmlFor="currentDate">Dia Atual:</label>
+            <input
+              type="date"
+              value={currentDate}
+              onChange={(e) => setCurrentDate(e.target.value)}
+              name="currentDate"
+            />
+          </div>
+          <div className="inputWrapper">
+            <label htmlFor="">Consumo (Período):</label>
+            <input
+              type="number"
+              value={consumption}
+              onChange={(e) =>
+                setConsumption(Number(e.target.value.replace('.', '')))
+              }
+            />
+          </div>
+          <div className="inputWrapper">
+            <label htmlFor="">Desconto(%):</label>
+            <input
+              type="number"
+              value={discount}
+              onChange={(e) => setDiscount(Number(e.target.value))}
+            />
+          </div>
+          <div className="inputWrapper">
+            <label htmlFor="">Estimativa:</label>
+            <input
+              disabled
+              type="texte"
+              value={
+                Math.trunc(consumptionEstimate).toLocaleString('pt-BR') + ' Plays'
+              }
+            />
+          </div>
+          <div className="inputWrapper">
+            <label htmlFor="pet-select">Tipos de planos:</label>
+            <div className="tiersWrapper">
+              <button
+                className={currentPlansActive === 'plansBrasil' ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setPlansList(plansBrasil)
+                  setCurrentPlansActive('plansBrasil')
+                }}
+              >
+                Brasil
+              </button>
+              <button
+                className={currentPlansActive === 'plansBrasilLegacy' ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setPlansList(plansBrasilLegacy)
+                  setCurrentPlansActive('plansBrasilLegacy')
+                }}
+              >
+                Brasil Legacy
+              </button>
+              <button
+                className={currentPlansActive === 'plansTier1' ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setPlansList(plansTier1)
+                  setCurrentPlansActive('plansTier1')
+                }}
+              >
+                Tier 1
+              </button>
+              <button
+                className={currentPlansActive === 'plansTier2' ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setPlansList(plansTier2)
+                  setCurrentPlansActive('plansTier2')
+                }}
+              >
+                Tier 2 (Latam)
+              </button>
+            </div>
+          </div>
+        </FormContainer>
+
+        <div>
+          {plansList.map(
+            ({
+              id,
+              name,
+              playsAvailable,
+              playsToStart,
+              price,
+              extraPlaysPrice,
+              upgradeAt,
+              priceToUpgrade,
+            }) => {
+              const isCheapestPlan =
+                playsToStart <= consumptionEstimate &&
+                upgradeAt > consumptionEstimate
+
+              return (
+                <InformationsPlan
+                  key={id}
+                  name={name}
+                  playsAvailable={playsAvailable}
+                  price={price}
+                  extraPlaysPrice={extraPlaysPrice}
+                  upgradeAt={upgradeAt}
+                  priceToUpgrade={priceToUpgrade}
+                  consumptionEstimate={consumptionEstimate}
+                  discount={discount}
+                  isCheapestPlan={isCheapestPlan}
+                  setCheapestPlanPriceTotal={setCheapestPlanPriceTotal}
+                  cheapestPlanPriceTotal={cheapestPlanPriceTotal}
+                  isBr={currentPlansActive === 'plansBrasil' || currentPlansActive === 'plansBrasilLegacy'}
+                />
+              )
+            },
+          )}
         </div>
-      </FormContainer>
-
-      <div>
-        {plansList.map(
-          ({
-            id,
-            name,
-            playsAvailable,
-            playsToStart,
-            price,
-            extraPlaysPrice,
-            upgradeAt,
-            priceToUpgrade,
-          }) => {
-            const isCheapestPlan =
-              playsToStart <= consumptionEstimate &&
-              upgradeAt > consumptionEstimate
-
-            return (
-              <InformationsPlan
-                key={id}
-                name={name}
-                playsAvailable={playsAvailable}
-                price={price}
-                extraPlaysPrice={extraPlaysPrice}
-                upgradeAt={upgradeAt}
-                priceToUpgrade={priceToUpgrade}
-                consumptionEstimate={consumptionEstimate}
-                discount={discount}
-                isCheapestPlan={isCheapestPlan}
-                setCheapestPlanPriceTotal={setCheapestPlanPriceTotal}
-                cheapestPlanPriceTotal={cheapestPlanPriceTotal}
-                isBr={currentPlansActive === 'plansBrasil' || currentPlansActive === 'plansBrasilLegacy'}
-              />
-            )
-          },
-        )}
-      </div>
-    </HomeContainer>
+      </HomeContainer>
+    </div>
   )
 }
