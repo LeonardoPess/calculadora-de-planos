@@ -92,9 +92,29 @@ const plansBrasil = [
     playsToStart: 2900000,
     price: 29997,
     extraPlaysPrice: 0.01,
+    upgradeAt: 3900000,
+    priceToUpgrade: 9000,
+  },
+  {
+    id: 10,
+    name: 'Enterprise 4m',
+    playsAvailable: 5000000,
+    playsToStart: 3900000,
+    price: 38997,
+    extraPlaysPrice: 0.01,
+    upgradeAt: 4960000,
+    priceToUpgrade: 9600,
+  },
+  {
+    id: 11,
+    name: 'Enterprise 5m',
+    playsAvailable: 3000000,
+    playsToStart: 4960000,
+    price: 48597,
+    extraPlaysPrice: 0.01,
     upgradeAt: Infinity,
     priceToUpgrade: 0,
-  },
+  }
 ]
 
 const plansBrasilLegacy = [
@@ -229,7 +249,7 @@ const plansTier1 = [
     price: 397,
     extraPlaysPrice: 0.004,
     upgradeAt: 245000,
-    priceToUpgrade: 600,
+    priceToUpgrade: 580,
   },
   {
     id: 5,
