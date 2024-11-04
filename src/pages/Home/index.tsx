@@ -98,7 +98,7 @@ const plansBrasil = [
   {
     id: 10,
     name: 'Enterprise 4m',
-    playsAvailable: 5000000,
+    playsAvailable: 4000000,
     playsToStart: 3900000,
     price: 38997,
     extraPlaysPrice: 0.01,
@@ -108,7 +108,7 @@ const plansBrasil = [
   {
     id: 11,
     name: 'Enterprise 5m',
-    playsAvailable: 3000000,
+    playsAvailable: 5000000,
     playsToStart: 4960000,
     price: 48597,
     extraPlaysPrice: 0.01,
