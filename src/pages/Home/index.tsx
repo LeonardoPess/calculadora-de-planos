@@ -77,9 +77,9 @@ const plansBrasil = [
   },
   {
     id: 8,
-    name: 'Enterprise 2m',
+    name: 'Enterprise 2mm',
     playsAvailable: 2000000,
-    playsToStart: 2000000,
+    playsToStart: 200000,
     price: 20997,
     extraPlaysPrice: 0.01,
     upgradeAt: 2900000,
