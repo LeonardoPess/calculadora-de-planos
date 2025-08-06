@@ -329,7 +329,7 @@ const plansTier1 = [
     playsAvailable: 2000,
     playsToStart: 0,
     price: 29,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.02,
     upgradeAt: 6000,
     priceToUpgrade: 50
   },
@@ -337,29 +337,29 @@ const plansTier1 = [
     id: 2,
     name: "Pro | 6k | A1 | T1",
     playsAvailable: 6000,
-    playsToStart: 2000,
+    playsToStart: 6000,
     price: 79,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.01,
     upgradeAt: 25000,
-    priceToUpgrade: 100
+    priceToUpgrade: 220
   },
   {
     id: 3,
     name: "Scale | 30k | A1 | T1",
     playsAvailable: 30000,
-    playsToStart: 6000,
+    playsToStart: 25000,
     price: 299,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.01,
     upgradeAt: 100000,
-    priceToUpgrade: 400
+    priceToUpgrade: 698
   },
   {
     id: 4,
     name: "Enterprise 100k | A1 | T1",
     playsAvailable: 100000,
-    playsToStart: 30000,
+    playsToStart: 95000,
     price: 997,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 250000,
     priceToUpgrade: 1500
   },
@@ -367,19 +367,19 @@ const plansTier1 = [
     id: 5,
     name: "Enterprise 250k | A1 | T1",
     playsAvailable: 250000,
-    playsToStart: 100000,
+    playsToStart: 195000,
     price: 2497,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 500000,
-    priceToUpgrade: 3000
+    priceToUpgrade: 2
   },
   {
     id: 6,
     name: "Enterprise 500k | A1 | T1",
     playsAvailable: 500000,
-    playsToStart: 250000,
+    playsToStart: 495000,
     price: 4997,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 1000000,
     priceToUpgrade: 5000
   },
@@ -387,9 +387,9 @@ const plansTier1 = [
     id: 7,
     name: "Enterprise 1M | A1 | T1",
     playsAvailable: 1000000,
-    playsToStart: 500000,
+    playsToStart: 970000,
     price: 9997,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 2000000,
     priceToUpgrade: 10000
   },
@@ -397,9 +397,9 @@ const plansTier1 = [
     id: 8,
     name: "Enterprise 2M | A1 | T1",
     playsAvailable: 2000000,
-    playsToStart: 1000000,
+    playsToStart: 1950000,
     price: 19997,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 3000000,
     priceToUpgrade: 10000
   },
@@ -407,9 +407,9 @@ const plansTier1 = [
     id: 9,
     name: "Enterprise 3M | A1 | T1",
     playsAvailable: 3000000,
-    playsToStart: 2000000,
+    playsToStart: 2950000,
     price: 29997,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 4000000,
     priceToUpgrade: 10000
   },
@@ -417,9 +417,9 @@ const plansTier1 = [
     id: 10,
     name: "Enterprise 4M | A1 | T1",
     playsAvailable: 4000000,
-    playsToStart: 3000000,
+    playsToStart: 3950000,
     price: 39997,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 5000000,
     priceToUpgrade: 10000
   },
@@ -427,9 +427,9 @@ const plansTier1 = [
     id: 11,
     name: "Enterprise 5M | A1 | T1",
     playsAvailable: 5000000,
-    playsToStart: 4000000,
+    playsToStart: 4950000,
     price: 49997,
-    extraPlaysPrice: 0,
+    extraPlaysPrice: 0.004,
     upgradeAt: 6000000,
     priceToUpgrade: 10000
   }
