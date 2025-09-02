@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-import { ChartBar } from "phosphor-react";
-import { HomeContainer, FormContainer } from "./styles";
-import { InformationsPlan } from "../../components/InformationsPlan";
+import { ChartBar } from 'phosphor-react'
+import { HomeContainer, FormContainer } from './styles'
+import { InformationsPlan } from '../../components/InformationsPlan'
 
 const plansBrasil = [
   {
     id: 1,
-    name: "Basic",
+    name: 'Basic',
     playsAvailable: 6000,
     playsToStart: 0,
     price: 97,
@@ -17,7 +17,7 @@ const plansBrasil = [
   },
   {
     id: 2,
-    name: "Pro",
+    name: 'Pro',
     playsAvailable: 25000,
     playsToStart: 16000,
     price: 297,
@@ -27,7 +27,7 @@ const plansBrasil = [
   },
   {
     id: 3,
-    name: "Scale",
+    name: 'Scale',
     playsAvailable: 50000,
     playsToStart: 40000,
     price: 597,
@@ -37,7 +37,7 @@ const plansBrasil = [
   },
   {
     id: 4,
-    name: "Enterprise 100k",
+    name: 'Enterprise 100k',
     playsAvailable: 100000,
     playsToStart: 85000,
     price: 1297,
@@ -47,7 +47,7 @@ const plansBrasil = [
   },
   {
     id: 5,
-    name: "Enterprise 250k",
+    name: 'Enterprise 250k',
     playsAvailable: 250000,
     playsToStart: 221429,
     price: 2997,
@@ -57,7 +57,7 @@ const plansBrasil = [
   },
   {
     id: 6,
-    name: "Enterprise 500k",
+    name: 'Enterprise 500k',
     playsAvailable: 500000,
     playsToStart: 464286,
     price: 5997,
@@ -67,7 +67,7 @@ const plansBrasil = [
   },
   {
     id: 7,
-    name: "Enterprise 1m",
+    name: 'Enterprise 1m',
     playsAvailable: 1000000,
     playsToStart: 857143,
     price: 10997,
@@ -77,7 +77,7 @@ const plansBrasil = [
   },
   {
     id: 8,
-    name: "Enterprise 2mm",
+    name: 'Enterprise 2mm',
     playsAvailable: 2000000,
     playsToStart: 200000,
     price: 20997,
@@ -87,7 +87,7 @@ const plansBrasil = [
   },
   {
     id: 9,
-    name: "Enterprise 3m",
+    name: 'Enterprise 3m',
     playsAvailable: 3000000,
     playsToStart: 2900000,
     price: 29997,
@@ -97,7 +97,7 @@ const plansBrasil = [
   },
   {
     id: 10,
-    name: "Enterprise 4m",
+    name: 'Enterprise 4m',
     playsAvailable: 4000000,
     playsToStart: 3900000,
     price: 38997,
@@ -107,7 +107,7 @@ const plansBrasil = [
   },
   {
     id: 11,
-    name: "Enterprise 5m",
+    name: 'Enterprise 5m',
     playsAvailable: 5000000,
     playsToStart: 4960000,
     price: 48597,
@@ -115,12 +115,12 @@ const plansBrasil = [
     upgradeAt: Infinity,
     priceToUpgrade: 0,
   },
-];
+]
 
 const plansBrasilLegacy = [
   {
     id: 1,
-    name: "Basic",
+    name: 'Basic',
     playsAvailable: 10000,
     playsToStart: 0,
     price: 97,
@@ -130,7 +130,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 2,
-    name: "Pro",
+    name: 'Pro',
     playsAvailable: 35000,
     playsToStart: 17500,
     price: 247,
@@ -140,7 +140,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 3,
-    name: "Scale",
+    name: 'Scale',
     playsAvailable: 70000,
     playsToStart: 45000,
     price: 447,
@@ -150,7 +150,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 4,
-    name: "Enterprise 100k",
+    name: 'Enterprise 100k',
     playsAvailable: 100000,
     playsToStart: 97500,
     price: 997,
@@ -160,7 +160,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 5,
-    name: "Enterprise 250k",
+    name: 'Enterprise 250k',
     playsAvailable: 250000,
     playsToStart: 240000,
     price: 2397,
@@ -170,7 +170,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 6,
-    name: "Enterprise 500k",
+    name: 'Enterprise 500k',
     playsAvailable: 500000,
     playsToStart: 460000,
     price: 4497,
@@ -180,7 +180,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 7,
-    name: "Enterprise 1m",
+    name: 'Enterprise 1m',
     playsAvailable: 1000000,
     playsToStart: 950000,
     price: 8997,
@@ -190,7 +190,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 8,
-    name: "Enterprise 2m",
+    name: 'Enterprise 2m',
     playsAvailable: 2000000,
     playsToStart: 1050000,
     price: 15997,
@@ -200,7 +200,7 @@ const plansBrasilLegacy = [
   },
   {
     id: 9,
-    name: "Enterprise 3m",
+    name: 'Enterprise 3m',
     playsAvailable: 3000000,
     playsToStart: 2900000,
     price: 24997,
@@ -208,12 +208,12 @@ const plansBrasilLegacy = [
     upgradeAt: Infinity,
     priceToUpgrade: 0,
   },
-];
+]
 
 const plansTier1Legacy = [
   {
     id: 1,
-    name: "Basic",
+    name: 'Basic',
     playsAvailable: 5000,
     playsToStart: 0,
     price: 29,
@@ -223,7 +223,7 @@ const plansTier1Legacy = [
   },
   {
     id: 2,
-    name: "Pro",
+    name: 'Pro',
     playsAvailable: 15000,
     playsToStart: 7500,
     price: 79,
@@ -233,7 +233,7 @@ const plansTier1Legacy = [
   },
   {
     id: 3,
-    name: "Scale",
+    name: 'Scale',
     playsAvailable: 50000,
     playsToStart: 27000,
     price: 199,
@@ -243,7 +243,7 @@ const plansTier1Legacy = [
   },
   {
     id: 4,
-    name: "Enterprise 100k",
+    name: 'Enterprise 100k',
     playsAvailable: 100000,
     playsToStart: 69800,
     price: 397,
@@ -253,7 +253,7 @@ const plansTier1Legacy = [
   },
   {
     id: 5,
-    name: "Enterprise 250k",
+    name: 'Enterprise 250k',
     playsAvailable: 250000,
     playsToStart: 245000,
     price: 977,
@@ -263,7 +263,7 @@ const plansTier1Legacy = [
   },
   {
     id: 6,
-    name: "Enterprise 500k",
+    name: 'Enterprise 500k',
     playsAvailable: 500000,
     playsToStart: 480000,
     price: 1897,
@@ -273,7 +273,7 @@ const plansTier1Legacy = [
   },
   {
     id: 7,
-    name: "Enterprise 1m",
+    name: 'Enterprise 1m',
     playsAvailable: 1000000,
     playsToStart: 925000,
     price: 3597,
@@ -283,7 +283,7 @@ const plansTier1Legacy = [
   },
   {
     id: 8,
-    name: "Enterprise 2m",
+    name: 'Enterprise 2m',
     playsAvailable: 2000000,
     playsToStart: 1850000,
     price: 6997,
@@ -293,7 +293,7 @@ const plansTier1Legacy = [
   },
   {
     id: 9,
-    name: "Enterprise 3m",
+    name: 'Enterprise 3m',
     playsAvailable: 3000000,
     playsToStart: 2750000,
     price: 9997,
@@ -303,7 +303,7 @@ const plansTier1Legacy = [
   },
   {
     id: 10,
-    name: "Enterprise 4m",
+    name: 'Enterprise 4m',
     playsAvailable: 4000000,
     playsToStart: 3725000,
     price: 12897,
@@ -313,7 +313,7 @@ const plansTier1Legacy = [
   },
   {
     id: 11,
-    name: "Enterprise 5m",
+    name: 'Enterprise 5m',
     playsAvailable: 5000000,
     playsToStart: 4725000,
     price: 15797,
@@ -321,11 +321,11 @@ const plansTier1Legacy = [
     upgradeAt: Infinity,
     priceToUpgrade: 0,
   },
-];
+]
 const plansTier1 = [
   {
     id: 1,
-    name: "Basic | 2k | A1 | T1",
+    name: 'Basic | 2k | A1 | T1',
     playsAvailable: 2000,
     playsToStart: 0,
     price: 29,
@@ -335,7 +335,7 @@ const plansTier1 = [
   },
   {
     id: 2,
-    name: "Pro | 6k | A1 | T1",
+    name: 'Pro | 6k | A1 | T1',
     playsAvailable: 6000,
     playsToStart: 6000,
     price: 79,
@@ -345,7 +345,7 @@ const plansTier1 = [
   },
   {
     id: 3,
-    name: "Scale | 30k | A1 | T1",
+    name: 'Scale | 30k | A1 | T1',
     playsAvailable: 30000,
     playsToStart: 25000,
     price: 299,
@@ -355,7 +355,7 @@ const plansTier1 = [
   },
   {
     id: 4,
-    name: "Enterprise 100k | A1 | T1",
+    name: 'Enterprise 100k | A1 | T1',
     playsAvailable: 100000,
     playsToStart: 95000,
     price: 997,
@@ -365,7 +365,7 @@ const plansTier1 = [
   },
   {
     id: 5,
-    name: "Enterprise 250k | A1 | T1",
+    name: 'Enterprise 250k | A1 | T1',
     playsAvailable: 250000,
     playsToStart: 195000,
     price: 2497,
@@ -375,7 +375,7 @@ const plansTier1 = [
   },
   {
     id: 6,
-    name: "Enterprise 500k | A1 | T1",
+    name: 'Enterprise 500k | A1 | T1',
     playsAvailable: 500000,
     playsToStart: 495000,
     price: 4997,
@@ -385,7 +385,7 @@ const plansTier1 = [
   },
   {
     id: 7,
-    name: "Enterprise 1M | A1 | T1",
+    name: 'Enterprise 1M | A1 | T1',
     playsAvailable: 1000000,
     playsToStart: 970000,
     price: 9997,
@@ -395,7 +395,7 @@ const plansTier1 = [
   },
   {
     id: 8,
-    name: "Enterprise 2M | A1 | T1",
+    name: 'Enterprise 2M | A1 | T1',
     playsAvailable: 2000000,
     playsToStart: 1950000,
     price: 19997,
@@ -405,7 +405,7 @@ const plansTier1 = [
   },
   {
     id: 9,
-    name: "Enterprise 3M | A1 | T1",
+    name: 'Enterprise 3M | A1 | T1',
     playsAvailable: 3000000,
     playsToStart: 2950000,
     price: 29997,
@@ -415,7 +415,7 @@ const plansTier1 = [
   },
   {
     id: 10,
-    name: "Enterprise 4M | A1 | T1",
+    name: 'Enterprise 4M | A1 | T1',
     playsAvailable: 4000000,
     playsToStart: 3950000,
     price: 39997,
@@ -425,7 +425,7 @@ const plansTier1 = [
   },
   {
     id: 11,
-    name: "Enterprise 5M | A1 | T1",
+    name: 'Enterprise 5M | A1 | T1',
     playsAvailable: 5000000,
     playsToStart: 4950000,
     price: 49997,
@@ -433,12 +433,12 @@ const plansTier1 = [
     upgradeAt: 5833333,
     priceToUpgrade: 10000,
   },
-];
+]
 
 const plansTier2 = [
   {
     id: 1,
-    name: "Basic",
+    name: 'Basic',
     playsAvailable: 8000,
     playsToStart: 0,
     price: 19,
@@ -448,7 +448,7 @@ const plansTier2 = [
   },
   {
     id: 2,
-    name: "Pro",
+    name: 'Pro',
     playsAvailable: 20000,
     playsToStart: 13000,
     price: 39,
@@ -458,7 +458,7 @@ const plansTier2 = [
   },
   {
     id: 3,
-    name: "Scale",
+    name: 'Scale',
     playsAvailable: 40000,
     playsToStart: 30000,
     price: 79,
@@ -468,7 +468,7 @@ const plansTier2 = [
   },
   {
     id: 4,
-    name: "Enterprise 100k",
+    name: 'Enterprise 100k',
     playsAvailable: 100000,
     playsToStart: 69500,
     price: 197,
@@ -478,7 +478,7 @@ const plansTier2 = [
   },
   {
     id: 5,
-    name: "Enterprise 250k",
+    name: 'Enterprise 250k',
     playsAvailable: 250000,
     playsToStart: 200000,
     price: 397,
@@ -488,7 +488,7 @@ const plansTier2 = [
   },
   {
     id: 6,
-    name: "Enterprise 500k",
+    name: 'Enterprise 500k',
     playsAvailable: 500000,
     playsToStart: 446000,
     price: 789,
@@ -498,7 +498,7 @@ const plansTier2 = [
   },
   {
     id: 7,
-    name: "Enterprise 1M",
+    name: 'Enterprise 1M',
     playsAvailable: 1000000,
     playsToStart: 854000,
     price: 1497,
@@ -508,7 +508,7 @@ const plansTier2 = [
   },
   {
     id: 8,
-    name: "Enterprise 2M",
+    name: 'Enterprise 2M',
     playsAvailable: 2000000,
     playsToStart: 1700000,
     price: 2897,
@@ -518,7 +518,7 @@ const plansTier2 = [
   },
   {
     id: 9,
-    name: "Enterprise 3M",
+    name: 'Enterprise 3M',
     playsAvailable: 3000000,
     playsToStart: 2550000,
     price: 3997,
@@ -528,7 +528,7 @@ const plansTier2 = [
   },
   {
     id: 10,
-    name: "Enterprise 4M",
+    name: 'Enterprise 4M',
     playsAvailable: 4000000,
     playsToStart: 3500000,
     price: 4997,
@@ -538,7 +538,7 @@ const plansTier2 = [
   },
   {
     id: 11,
-    name: "Enterprise 5M",
+    name: 'Enterprise 5M',
     playsAvailable: 5000000,
     playsToStart: 4500000,
     price: 5997,
@@ -546,74 +546,74 @@ const plansTier2 = [
     upgradeAt: Infinity,
     priceToUpgrade: 0,
   },
-];
+]
 
 interface Plan {
-  id: number;
-  name: string;
-  playsAvailable: number;
-  playsToStart: number;
-  price: number;
-  extraPlaysPrice: number;
-  upgradeAt: number;
-  priceToUpgrade: number;
+  id: number
+  name: string
+  playsAvailable: number
+  playsToStart: number
+  price: number
+  extraPlaysPrice: number
+  upgradeAt: number
+  priceToUpgrade: number
 }
 
 export function Home() {
-  const [plansList, setPlansList] = useState<Plan[]>([]);
-  const [currentPlansActive, setCurrentPlansActive] = useState("plansBrasil");
-  const [cheapestPlanPriceTotal, setCheapestPlanPriceTotal] = useState(0);
-  const [cycleStatedAt, setCycleStatedAt] = useState("");
+  const [plansList, setPlansList] = useState<Plan[]>([])
+  const [currentPlansActive, setCurrentPlansActive] = useState('plansBrasil')
+  const [cheapestPlanPriceTotal, setCheapestPlanPriceTotal] = useState(0)
+  const [cycleStatedAt, setCycleStatedAt] = useState('')
   const [currentDate, setCurrentDate] = useState(
-    new Date().toJSON().slice(0, 10)
-  );
-  const [consumption, setConsumption] = useState(0);
-  const [discount, setDiscount] = useState(0);
+    new Date().toJSON().slice(0, 10),
+  )
+  const [consumption, setConsumption] = useState(0)
+  const [discount, setDiscount] = useState(0)
 
   useEffect(() => {
-    setPlansList(plansBrasil);
+    setPlansList(plansBrasil)
 
-    const date = new Date();
-    const firstMonthDayDate = new Date(date.getFullYear(), date.getMonth(), 1);
-    setCycleStatedAt(firstMonthDayDate.toJSON().slice(0, 10));
-  }, []);
+    const date = new Date()
+    const firstMonthDayDate = new Date(date.getFullYear(), date.getMonth(), 1)
+    setCycleStatedAt(firstMonthDayDate.toJSON().slice(0, 10))
+  }, [])
 
   const timeDiff =
-    new Date(currentDate).getTime() - new Date(cycleStatedAt).getTime();
-  const diffInDays = timeDiff / (1000 * 3600 * 24);
-  const consumptionEstimate = (consumption / diffInDays) * 30;
+    new Date(currentDate).getTime() - new Date(cycleStatedAt).getTime()
+  const diffInDays = timeDiff / (1000 * 3600 * 24)
+  const consumptionEstimate = (consumption / diffInDays) * 30
 
   return (
     <div>
       <strong
-        style={{ margin: "0 auto", display: "block", textAlign: "center" }}
+        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
       >
-        {currentPlansActive == "plansBrasil" &&
-          "planos brasileiros a partir do final de 03/2024"}
+        {currentPlansActive == 'plansBrasil' &&
+          'planos brasileiros a partir do final de 03/2024'}
       </strong>
       <strong
-        style={{ margin: "0 auto", display: "block", textAlign: "center" }}
+        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
       >
-        {currentPlansActive == "plansBrasilLegacy" &&
-          "planos brasileiros antigos, até 03/2024"}
+        {currentPlansActive == 'plansBrasilLegacy' &&
+          'planos brasileiros antigos, até 03/2024'}
       </strong>
       <strong
-        style={{ margin: "0 auto", display: "block", textAlign: "center" }}
+        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
       >
-        {currentPlansActive == "plansTier1" &&
-          "EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul"}
+        {currentPlansActive == 'plansTier1' &&
+          'EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul'}
       </strong>
       <strong
-        style={{ margin: "0 auto", display: "block", textAlign: "center" }}
+        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
       >
-        {currentPlansActive == "plansTier1Legacy" &&
-          "Antigos planos: EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul"}
+        {currentPlansActive == 'plansTier1Legacy' &&
+          'Antigos planos: EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul'}
       </strong>
       <strong
-        style={{ margin: "0 auto", display: "block", textAlign: "center" }}
+        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
       >
-        {currentPlansActive == "plansTier2" &&
-          "América Latina, África, Países asiáticos não-ricos."}
+        {currentPlansActive == 'plansTier2' &&
+          'América Latina, África, Países asiáticos não-ricos.'}
       </strong>
       <HomeContainer>
         <FormContainer>
@@ -648,7 +648,7 @@ export function Home() {
               type="number"
               value={consumption}
               onChange={(e) =>
-                setConsumption(Number(e.target.value.replace(".", "")))
+                setConsumption(Number(e.target.value.replace('.', '')))
               }
             />
           </div>
@@ -666,8 +666,8 @@ export function Home() {
               disabled
               type="texte"
               value={
-                Math.trunc(consumptionEstimate).toLocaleString("pt-BR") +
-                " Plays"
+                Math.trunc(consumptionEstimate).toLocaleString('pt-BR') +
+                ' Plays'
               }
             />
           </div>
@@ -675,55 +675,55 @@ export function Home() {
             <label htmlFor="pet-select">Tipos de planos:</label>
             <div className="tiersWrapper">
               <button
-                className={currentPlansActive === "plansBrasil" ? "active" : ""}
+                className={currentPlansActive === 'plansBrasil' ? 'active' : ''}
                 onClick={(e) => {
-                  e.preventDefault();
-                  setPlansList(plansBrasil);
-                  setCurrentPlansActive("plansBrasil");
+                  e.preventDefault()
+                  setPlansList(plansBrasil)
+                  setCurrentPlansActive('plansBrasil')
                 }}
               >
                 Brasil
               </button>
               <button
                 className={
-                  currentPlansActive === "plansBrasilLegacy" ? "active" : ""
+                  currentPlansActive === 'plansBrasilLegacy' ? 'active' : ''
                 }
                 onClick={(e) => {
-                  e.preventDefault();
-                  setPlansList(plansBrasilLegacy);
-                  setCurrentPlansActive("plansBrasilLegacy");
+                  e.preventDefault()
+                  setPlansList(plansBrasilLegacy)
+                  setCurrentPlansActive('plansBrasilLegacy')
                 }}
               >
                 Brasil Legacy
               </button>
               <button
-                className={currentPlansActive === "plansTier1" ? "active" : ""}
+                className={currentPlansActive === 'plansTier1' ? 'active' : ''}
                 onClick={(e) => {
-                  e.preventDefault();
-                  setPlansList(plansTier1);
-                  setCurrentPlansActive("plansTier1");
+                  e.preventDefault()
+                  setPlansList(plansTier1)
+                  setCurrentPlansActive('plansTier1')
                 }}
               >
                 Tier 1
               </button>
               <button
                 className={
-                  currentPlansActive === "plansTier1Legacy" ? "active" : ""
+                  currentPlansActive === 'plansTier1Legacy' ? 'active' : ''
                 }
                 onClick={(e) => {
-                  e.preventDefault();
-                  setPlansList(plansTier1Legacy);
-                  setCurrentPlansActive("plansTier1Legacy");
+                  e.preventDefault()
+                  setPlansList(plansTier1Legacy)
+                  setCurrentPlansActive('plansTier1Legacy')
                 }}
               >
                 Tier 1 Legacy
               </button>
               <button
-                className={currentPlansActive === "plansTier2" ? "active" : ""}
+                className={currentPlansActive === 'plansTier2' ? 'active' : ''}
                 onClick={(e) => {
-                  e.preventDefault();
-                  setPlansList(plansTier2);
-                  setCurrentPlansActive("plansTier2");
+                  e.preventDefault()
+                  setPlansList(plansTier2)
+                  setCurrentPlansActive('plansTier2')
                 }}
               >
                 Tier 2 (Latam)
@@ -746,7 +746,7 @@ export function Home() {
             }) => {
               const isCheapestPlan =
                 playsToStart <= consumptionEstimate &&
-                upgradeAt > consumptionEstimate;
+                upgradeAt > consumptionEstimate
 
               return (
                 <InformationsPlan
@@ -763,15 +763,15 @@ export function Home() {
                   setCheapestPlanPriceTotal={setCheapestPlanPriceTotal}
                   cheapestPlanPriceTotal={cheapestPlanPriceTotal}
                   isBr={
-                    currentPlansActive === "plansBrasil" ||
-                    currentPlansActive === "plansBrasilLegacy"
+                    currentPlansActive === 'plansBrasil' ||
+                    currentPlansActive === 'plansBrasilLegacy'
                   }
                 />
-              );
-            }
+              )
+            },
           )}
         </div>
       </HomeContainer>
     </div>
-  );
+  )
 }
