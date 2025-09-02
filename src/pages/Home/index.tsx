@@ -114,7 +114,7 @@ const plansBrasil = [
     extraPlaysPrice: 0.01,
     upgradeAt: Infinity,
     priceToUpgrade: 0,
-  },
+  }
 ]
 
 const plansBrasilLegacy = [
@@ -325,115 +325,116 @@ const plansTier1Legacy = [
 const plansTier1 = [
   {
     id: 1,
-    name: 'Basic | 2k | A1 | T1',
+    name: "Basic | 2k | A1 | T1",
     playsAvailable: 2000,
     playsToStart: 0,
     price: 29,
     extraPlaysPrice: 0.02,
-    upgradeAt: 4500,
-    priceToUpgrade: 50,
+    upgradeAt: 6000,
+    priceToUpgrade: 50
   },
   {
     id: 2,
-    name: 'Pro | 6k | A1 | T1',
+    name: "Pro | 6k | A1 | T1",
     playsAvailable: 6000,
     playsToStart: 6000,
     price: 79,
-    extraPlaysPrice: 0.02,
-    upgradeAt: 17000,
-    priceToUpgrade: 220,
+    extraPlaysPrice: 0.01,
+    upgradeAt: 25000,
+    priceToUpgrade: 220
   },
   {
     id: 3,
-    name: 'Scale | 30k | A1 | T1',
+    name: "Scale | 30k | A1 | T1",
     playsAvailable: 30000,
     playsToStart: 25000,
     price: 299,
-    extraPlaysPrice: 0.02,
-    upgradeAt: 64900,
-    priceToUpgrade: 698,
+    extraPlaysPrice: 0.01,
+    upgradeAt: 100000,
+    priceToUpgrade: 698
   },
   {
     id: 4,
-    name: 'Enterprise 100k | A1 | T1',
+    name: "Enterprise 100k | A1 | T1",
     playsAvailable: 100000,
     playsToStart: 95000,
     price: 997,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 225000,
-    priceToUpgrade: 1500,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 250000,
+    priceToUpgrade: 1500
   },
   {
     id: 5,
-    name: 'Enterprise 250k | A1 | T1',
+    name: "Enterprise 250k | A1 | T1",
     playsAvailable: 250000,
     playsToStart: 195000,
     price: 2497,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 458333,
-    priceToUpgrade: 2,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 500000,
+    priceToUpgrade: 2
   },
   {
     id: 6,
-    name: 'Enterprise 500k | A1 | T1',
+    name: "Enterprise 500k | A1 | T1",
     playsAvailable: 500000,
     playsToStart: 495000,
     price: 4997,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 916667,
-    priceToUpgrade: 5000,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 1000000,
+    priceToUpgrade: 5000
   },
   {
     id: 7,
-    name: 'Enterprise 1M | A1 | T1',
+    name: "Enterprise 1M | A1 | T1",
     playsAvailable: 1000000,
     playsToStart: 970000,
     price: 9997,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 1833333,
-    priceToUpgrade: 10000,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 2000000,
+    priceToUpgrade: 10000
   },
   {
     id: 8,
-    name: 'Enterprise 2M | A1 | T1',
+    name: "Enterprise 2M | A1 | T1",
     playsAvailable: 2000000,
     playsToStart: 1950000,
     price: 19997,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 2833333,
-    priceToUpgrade: 10000,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 3000000,
+    priceToUpgrade: 10000
   },
   {
     id: 9,
-    name: 'Enterprise 3M | A1 | T1',
+    name: "Enterprise 3M | A1 | T1",
     playsAvailable: 3000000,
     playsToStart: 2950000,
     price: 29997,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 3833333,
-    priceToUpgrade: 10000,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 4000000,
+    priceToUpgrade: 10000
   },
   {
     id: 10,
-    name: 'Enterprise 4M | A1 | T1',
+    name: "Enterprise 4M | A1 | T1",
     playsAvailable: 4000000,
     playsToStart: 3950000,
     price: 39997,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 4833333,
-    priceToUpgrade: 10000,
+    extraPlaysPrice: 0.004,
+    upgradeAt: 5000000,
+    priceToUpgrade: 10000
   },
   {
     id: 11,
-    name: 'Enterprise 5M | A1 | T1',
+    name: "Enterprise 5M | A1 | T1",
     playsAvailable: 5000000,
     playsToStart: 4950000,
     price: 49997,
-    extraPlaysPrice: 0.012,
-    upgradeAt: 5833333,
-    priceToUpgrade: 10000,
-  },
+    extraPlaysPrice: 0.004,
+    upgradeAt: 6000000,
+    priceToUpgrade: 10000
+  }
 ]
+
 
 const plansTier2 = [
   {
@@ -442,7 +443,7 @@ const plansTier2 = [
     playsAvailable: 8000,
     playsToStart: 0,
     price: 19,
-    extraPlaysPrice: 0.01,
+    extraPlaysPrice: 0.004,
     upgradeAt: 13000,
     priceToUpgrade: 20,
   },
@@ -452,7 +453,7 @@ const plansTier2 = [
     playsAvailable: 20000,
     playsToStart: 13000,
     price: 39,
-    extraPlaysPrice: 0.01,
+    extraPlaysPrice: 0.004,
     upgradeAt: 30000,
     priceToUpgrade: 40,
   },
@@ -462,7 +463,7 @@ const plansTier2 = [
     playsAvailable: 40000,
     playsToStart: 30000,
     price: 79,
-    extraPlaysPrice: 0.01,
+    extraPlaysPrice: 0.004,
     upgradeAt: 69500,
     priceToUpgrade: 118,
   },
@@ -472,7 +473,7 @@ const plansTier2 = [
     playsAvailable: 100000,
     playsToStart: 69500,
     price: 197,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: 200000,
     priceToUpgrade: 200,
   },
@@ -482,7 +483,7 @@ const plansTier2 = [
     playsAvailable: 250000,
     playsToStart: 200000,
     price: 397,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: 446000,
     priceToUpgrade: 392,
   },
@@ -492,7 +493,7 @@ const plansTier2 = [
     playsAvailable: 500000,
     playsToStart: 446000,
     price: 789,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: 854000,
     priceToUpgrade: 708,
   },
@@ -502,7 +503,7 @@ const plansTier2 = [
     playsAvailable: 1000000,
     playsToStart: 854000,
     price: 1497,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: 1700000,
     priceToUpgrade: 1400,
   },
@@ -512,7 +513,7 @@ const plansTier2 = [
     playsAvailable: 2000000,
     playsToStart: 1700000,
     price: 2897,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: 2550000,
     priceToUpgrade: 1100,
   },
@@ -522,7 +523,7 @@ const plansTier2 = [
     playsAvailable: 3000000,
     playsToStart: 2550000,
     price: 3997,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: 3500000,
     priceToUpgrade: 1000,
   },
@@ -532,7 +533,7 @@ const plansTier2 = [
     playsAvailable: 4000000,
     playsToStart: 3500000,
     price: 4997,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: 4500000,
     priceToUpgrade: 1000,
   },
@@ -542,7 +543,7 @@ const plansTier2 = [
     playsAvailable: 5000000,
     playsToStart: 4500000,
     price: 5997,
-    extraPlaysPrice: 0.004,
+    extraPlaysPrice: 0.002,
     upgradeAt: Infinity,
     priceToUpgrade: 0,
   },
@@ -585,36 +586,11 @@ export function Home() {
 
   return (
     <div>
-      <strong
-        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
-      >
-        {currentPlansActive == 'plansBrasil' &&
-          'planos brasileiros a partir do final de 03/2024'}
-      </strong>
-      <strong
-        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
-      >
-        {currentPlansActive == 'plansBrasilLegacy' &&
-          'planos brasileiros antigos, até 03/2024'}
-      </strong>
-      <strong
-        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
-      >
-        {currentPlansActive == 'plansTier1' &&
-          'EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul'}
-      </strong>
-      <strong
-        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
-      >
-        {currentPlansActive == 'plansTier1Legacy' &&
-          'Antigos planos: EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul'}
-      </strong>
-      <strong
-        style={{ margin: '0 auto', display: 'block', textAlign: 'center' }}
-      >
-        {currentPlansActive == 'plansTier2' &&
-          'América Latina, África, Países asiáticos não-ricos.'}
-      </strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansBrasil' && 'planos brasileiros a partir do final de 03/2024'}</strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansBrasilLegacy' && 'planos brasileiros antigos, até 03/2024'}</strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansTier1' && 'EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul'}</strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansTier1Legacy' && 'Antigos planos: EUA, Canadá, Europa (exceto Rússia), Austrália, Nova Zelândia, Singapura, Japão, Coreia do Sul'}</strong>
+      <strong style={{margin: '0 auto',display: 'block', textAlign: 'center'}}>{currentPlansActive == 'plansTier2' && 'América Latina, África, Países asiáticos não-ricos.'}</strong>
       <HomeContainer>
         <FormContainer>
           <div className="titleBox">
@@ -666,8 +642,7 @@ export function Home() {
               disabled
               type="texte"
               value={
-                Math.trunc(consumptionEstimate).toLocaleString('pt-BR') +
-                ' Plays'
+                Math.trunc(consumptionEstimate).toLocaleString('pt-BR') + ' Plays'
               }
             />
           </div>
@@ -685,9 +660,7 @@ export function Home() {
                 Brasil
               </button>
               <button
-                className={
-                  currentPlansActive === 'plansBrasilLegacy' ? 'active' : ''
-                }
+                className={currentPlansActive === 'plansBrasilLegacy' ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault()
                   setPlansList(plansBrasilLegacy)
@@ -707,16 +680,14 @@ export function Home() {
                 Tier 1
               </button>
               <button
-                className={
-                  currentPlansActive === 'plansTier1Legacy' ? 'active' : ''
-                }
+                className={currentPlansActive === 'plansTier1Legacy' ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault()
                   setPlansList(plansTier1Legacy)
                   setCurrentPlansActive('plansTier1Legacy')
                 }}
               >
-                Tier 1 Legacy
+                 Tier 1 Legacy
               </button>
               <button
                 className={currentPlansActive === 'plansTier2' ? 'active' : ''}
@@ -762,10 +733,7 @@ export function Home() {
                   isCheapestPlan={isCheapestPlan}
                   setCheapestPlanPriceTotal={setCheapestPlanPriceTotal}
                   cheapestPlanPriceTotal={cheapestPlanPriceTotal}
-                  isBr={
-                    currentPlansActive === 'plansBrasil' ||
-                    currentPlansActive === 'plansBrasilLegacy'
-                  }
+                  isBr={currentPlansActive === 'plansBrasil' || currentPlansActive === 'plansBrasilLegacy'}
                 />
               )
             },
